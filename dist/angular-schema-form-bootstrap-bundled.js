@@ -1,7 +1,7 @@
 /*!
  * angular-schema-form-bootstrap
  * @version 1.0.0-alpha.5
- * @date Thu, 18 Jan 2024 16:41:19 GMT
+ * @date Thu, 18 Jan 2024 17:32:06 GMT
  * @link https://github.com/json-schema-form/angular-schema-form-bootstrap
  * @license MIT
  * Copyright (c) 2014-2024 JSON Schema Form
@@ -71,14 +71,14 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 21);
+/******/ 	return __webpack_require__(__webpack_require__.s = 24);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(18);
+__webpack_require__(21);
 
 
 /***/ }),
@@ -103,13 +103,22 @@ module.exports = path;
 /* 3 */
 /***/ (function(module, exports) {
 
+var path = '/bootstrap/bbox.html';
+var html = "<div class=\"form-group {{::form.htmlClass + ' schema-form-' + form.type + ' ' + idClass}}\" ng-class=\"{\n       'has-error': form.disableErrorState !== true && hasError(),\n       'has-success': form.disableSuccessState !== true && hasSuccess(),\n       'has-feedback': form.feedback !== false,\n       'required': form.required === true\n     }\">\n  <label class=\"control-label {{::form.labelHtmlClass}}\" ng-class=\"{'sr-only': !showTitle()}\"\n    for=\"{{::fieldId(true, false)}}\">{{form.title}}\n  </label>\n  <input ng-show=\"::form.key\" type=\"{{::form.type}}\" step=\"any\" sf-changed=\"form\" placeholder=\"{{::form.placeholder}}\"\n    class=\"form-control {{::form.fieldHtmlClass}}\" id=\"{{::fieldId(true, false)}}\" sf-field-model\n    ng-disabled=\"form.readonly\" schema-validate=\"form\" name=\"{{::fieldId(true, false)}}\"\n    aria-describedby=\"{{::fieldId(true, true) + '-status'}}\">\n\n  <button class=\"button {{ form.style || '' }}\" type=\"button\" ng-click=\"buttonClick($event, form)\">\n    {{ 'ok' | translate }}\n  </button>\n\n</div>";
+window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
+module.exports = path;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
 var path = '/bootstrap/checkbox.html';
 var html = "<div class=\"checkbox schema-form-checkbox {{::form.htmlClass + ' ' + idClass}}\"\n     ng-class=\"{\n       'has-error': form.disableErrorState !== true && hasError(),\n       'has-success': form.disableSuccessState !== true && hasSuccess(),\n       'has-feedback': form.feedback !== false,\n       'required': form.required === true\n     }\">\n  <label class=\"{{::form.labelHtmlClass}}\">\n    <input type=\"checkbox\"\n           sf-changed=\"form\"\n           ng-disabled=\"form.readonly\"\n           sf-field-model\n           schema-validate=\"form\"\n           class=\"{{::form.fieldHtmlClass}}\"\n           name=\"{{::fieldId(true, false)}}\">\n    <span ng-bind-html=\"form.title\"></span>\n  </label>\n  <div class=\"help-block\" sf-message=\"form.description\"></div>\n</div>\n";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 var path = '/bootstrap/checkboxes.html';
@@ -118,7 +127,7 @@ window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, htm
 module.exports = path;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 var path = '/bootstrap/default.html';
@@ -127,20 +136,11 @@ window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, htm
 module.exports = path;
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-var path = '/bootstrap/fieldset.html';
-var html = "<fieldset ng-disabled=\"form.readonly\" class=\"schema-form-fieldset {{::form.htmlClass + ' ' + idClass}}\">\n  <legend ng-class=\"{'sr-only': !showTitle() }\">{{ form.title }}</legend>\n  <div class=\"help-block\" ng-show=\"form.description\" ng-bind-html=\"form.description\"></div>\n</fieldset>\n";
-window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
-module.exports = path;
-
-/***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
-var path = '/bootstrap/help.html';
-var html = "<div class=\"helpvalue schema-form-helpvalue {{::form.htmlClass + ' ' + idClass}}\" ng-bind-html=\"form.helpvalue\"></div>\n";
+var path = '/bootstrap/feature.html';
+var html = "<div class=\"form-group {{::form.htmlClass + ' schema-form-' + form.type + ' ' + idClass}}\" ng-class=\"{\n       'has-error': form.disableErrorState !== true && hasError(),\n       'has-success': form.disableSuccessState !== true && hasSuccess(),\n       'has-feedback': form.feedback !== false,\n       'required': form.required === true\n     }\">\n  <label class=\"control-label {{::form.labelHtmlClass}}\" ng-class=\"{'sr-only': !showTitle()}\"\n    for=\"{{::fieldId(true, false)}}\">{{form.title}}\n  </label>\n  <input ng-show=\"::form.key\" type=\"{{::form.type}}\" step=\"any\" sf-changed=\"form\" placeholder=\"{{::form.placeholder}}\"\n    class=\"form-control {{::form.fieldHtmlClass}}\" id=\"{{::fieldId(true, false)}}\" sf-field-model\n    ng-disabled=\"form.readonly\" schema-validate=\"form\" name=\"{{::fieldId(true, false)}}\"\n    aria-describedby=\"{{::fieldId(true, true) + '-status'}}\">\n\n  <button class=\"button {{ form.style || '' }}\" type=\"button\" ng-click=\"buttonClick($event, form)\">\n    {{ 'ok' | translate }}\n  </button>\n\n</div>";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
 
@@ -148,7 +148,7 @@ module.exports = path;
 /* 8 */
 /***/ (function(module, exports) {
 
-var path = '/bootstrap/ogcbbox.html';
+var path = '/bootstrap/featurecollection.html';
 var html = "<div class=\"form-group {{::form.htmlClass + ' schema-form-' + form.type + ' ' + idClass}}\" ng-class=\"{\n       'has-error': form.disableErrorState !== true && hasError(),\n       'has-success': form.disableSuccessState !== true && hasSuccess(),\n       'has-feedback': form.feedback !== false,\n       'required': form.required === true\n     }\">\n  <label class=\"control-label {{::form.labelHtmlClass}}\" ng-class=\"{'sr-only': !showTitle()}\"\n    for=\"{{::fieldId(true, false)}}\">{{form.title}}\n  </label>\n  <input ng-show=\"::form.key\" type=\"{{::form.type}}\" step=\"any\" sf-changed=\"form\" placeholder=\"{{::form.placeholder}}\"\n    class=\"form-control {{::form.fieldHtmlClass}}\" id=\"{{::fieldId(true, false)}}\" sf-field-model\n    ng-disabled=\"form.readonly\" schema-validate=\"form\" name=\"{{::fieldId(true, false)}}\"\n    aria-describedby=\"{{::fieldId(true, true) + '-status'}}\">\n\n  <button class=\"button {{ form.style || '' }}\" type=\"button\" ng-click=\"buttonClick($event, form)\">\n    {{ 'ok' | translate }}\n  </button>\n\n</div>";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
@@ -157,13 +157,40 @@ module.exports = path;
 /* 9 */
 /***/ (function(module, exports) {
 
+var path = '/bootstrap/fieldset.html';
+var html = "<fieldset ng-disabled=\"form.readonly\" class=\"schema-form-fieldset {{::form.htmlClass + ' ' + idClass}}\">\n  <legend ng-class=\"{'sr-only': !showTitle() }\">{{ form.title }}</legend>\n  <div class=\"help-block\" ng-show=\"form.description\" ng-bind-html=\"form.description\"></div>\n</fieldset>\n";
+window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
+module.exports = path;
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+var path = '/bootstrap/geometry.html';
+var html = "<div class=\"form-group {{::form.htmlClass + ' schema-form-' + form.type + ' ' + idClass}}\" ng-class=\"{\n       'has-error': form.disableErrorState !== true && hasError(),\n       'has-success': form.disableSuccessState !== true && hasSuccess(),\n       'has-feedback': form.feedback !== false,\n       'required': form.required === true\n     }\">\n  <label class=\"control-label {{::form.labelHtmlClass}}\" ng-class=\"{'sr-only': !showTitle()}\"\n    for=\"{{::fieldId(true, false)}}\">{{form.title}}\n  </label>\n  <input ng-show=\"::form.key\" type=\"{{::form.type}}\" step=\"any\" sf-changed=\"form\" placeholder=\"{{::form.placeholder}}\"\n    class=\"form-control {{::form.fieldHtmlClass}}\" id=\"{{::fieldId(true, false)}}\" sf-field-model\n    ng-disabled=\"form.readonly\" schema-validate=\"form\" name=\"{{::fieldId(true, false)}}\"\n    aria-describedby=\"{{::fieldId(true, true) + '-status'}}\">\n\n  <button class=\"button {{ form.style || '' }}\" type=\"button\" ng-click=\"buttonClick($event, form)\">\n    {{ 'ok' | translate }}\n  </button>\n\n</div>";
+window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
+module.exports = path;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+var path = '/bootstrap/help.html';
+var html = "<div class=\"helpvalue schema-form-helpvalue {{::form.htmlClass + ' ' + idClass}}\" ng-bind-html=\"form.helpvalue\"></div>\n";
+window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
+module.exports = path;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
 var path = '/bootstrap/radio-buttons.html';
 var html = "<div class=\"form-group schema-form-radiobuttons {{::form.htmlClass + ' ' + idClass}}\"\n     ng-class=\"{\n       'has-error': form.disableErrorState !== true &&  hasError(),\n       'has-success': form.disableSuccessState !== true &&  hasSuccess(),\n       'required': form.required === true\n     }\">\n  <div>\n    <label class=\"control-label {{::form.labelHtmlClass}}\" ng-show=\"showTitle()\">{{form.title}}</label>\n  </div>\n  <div class=\"btn-group\">\n    <label sf-field-model=\"replaceAll\" class=\"btn {{ (tm.value === $$value$$) ? form.style.selected || 'btn-default' : form.style.unselected || 'btn-default'; }}\"\n           ng-class=\"{ active: tm.value === $$value$$ }\"\n           ng-repeat=\"tm in form.titleMap\">\n      <input type=\"radio\"\n             class=\"{{::form.fieldHtmlClass}}\"\n             sf-changed=\"form\"\n             style=\"display: none;\"\n             ng-disabled=\"form.readonly\"\n             sf-field-model\n             schema-validate=\"form\"\n             ng-value=\"tm.value\"\n             name=\"{{::fieldId(true, false)}}\">\n      <span ng-bind-html=\"tm.name\"></span>\n    </label>\n  </div>\n  <div class=\"help-block\" sf-message=\"form.description\"></div>\n</div>\n";
 window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, html) }]);
 module.exports = path;
 
 /***/ }),
-/* 10 */
+/* 13 */
 /***/ (function(module, exports) {
 
 var path = '/bootstrap/radios-inline.html';
@@ -172,7 +199,7 @@ window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, htm
 module.exports = path;
 
 /***/ }),
-/* 11 */
+/* 14 */
 /***/ (function(module, exports) {
 
 var path = '/bootstrap/radios.html';
@@ -181,7 +208,7 @@ window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, htm
 module.exports = path;
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, exports) {
 
 var path = '/bootstrap/section.html';
@@ -190,7 +217,7 @@ window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, htm
 module.exports = path;
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, exports) {
 
 var path = '/bootstrap/select.html';
@@ -199,7 +226,7 @@ window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, htm
 module.exports = path;
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports) {
 
 var path = '/bootstrap/submit.html';
@@ -208,7 +235,7 @@ window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, htm
 module.exports = path;
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(module, exports) {
 
 var path = '/bootstrap/tabarray.html';
@@ -217,7 +244,7 @@ window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, htm
 module.exports = path;
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(module, exports) {
 
 var path = '/bootstrap/tabs.html';
@@ -226,7 +253,7 @@ window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, htm
 module.exports = path;
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(module, exports) {
 
 var path = '/bootstrap/textarea.html';
@@ -235,7 +262,7 @@ window.angular.module('ng').run(['$templateCache', function(c) { c.put(path, htm
 module.exports = path;
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -244,37 +271,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap_actions_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__bootstrap_actions_html__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bootstrap_array_html__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bootstrap_array_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__bootstrap_array_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bootstrap_checkbox_html__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bootstrap_checkbox_html__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bootstrap_checkbox_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__bootstrap_checkbox_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bootstrap_checkboxes_html__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bootstrap_checkboxes_html__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bootstrap_checkboxes_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__bootstrap_checkboxes_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__bootstrap_default_html__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__bootstrap_default_html__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__bootstrap_default_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__bootstrap_default_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__bootstrap_fieldset_html__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__bootstrap_fieldset_html__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__bootstrap_fieldset_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__bootstrap_fieldset_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__bootstrap_help_html__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__bootstrap_help_html__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__bootstrap_help_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__bootstrap_help_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__bootstrap_radio_buttons_html__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__bootstrap_radio_buttons_html__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__bootstrap_radio_buttons_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__bootstrap_radio_buttons_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__bootstrap_radios_html__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__bootstrap_radios_html__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__bootstrap_radios_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__bootstrap_radios_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__bootstrap_radios_inline_html__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__bootstrap_radios_inline_html__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__bootstrap_radios_inline_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__bootstrap_radios_inline_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__bootstrap_section_html__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__bootstrap_section_html__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__bootstrap_section_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__bootstrap_section_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__bootstrap_select_html__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__bootstrap_select_html__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__bootstrap_select_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__bootstrap_select_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__bootstrap_submit_html__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__bootstrap_submit_html__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__bootstrap_submit_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__bootstrap_submit_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__bootstrap_tabarray_html__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__bootstrap_tabarray_html__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__bootstrap_tabarray_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__bootstrap_tabarray_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__bootstrap_tabs_html__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__bootstrap_tabs_html__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__bootstrap_tabs_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__bootstrap_tabs_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__bootstrap_textarea_html__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__bootstrap_textarea_html__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__bootstrap_textarea_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__bootstrap_textarea_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__bootstrap_ogcbbox_html__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__bootstrap_ogcbbox_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__bootstrap_ogcbbox_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__bootstrap_bbox_html__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__bootstrap_bbox_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__bootstrap_bbox_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__bootstrap_geometry_html__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__bootstrap_geometry_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__bootstrap_geometry_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__bootstrap_feature_html__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__bootstrap_feature_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__bootstrap_feature_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__bootstrap_featurecollection_html__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__bootstrap_featurecollection_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__bootstrap_featurecollection_html__);
 // ngtemplate-loader embeds the html on build
+
+
+
 
 
 
@@ -386,19 +422,24 @@ function bootstrapDecoratorConfig(
     tabarray: {template: __WEBPACK_IMPORTED_MODULE_13__bootstrap_tabarray_html___default.a, builder: [ sfField, ngModelOptions, ngModel, array, condition ]},
     tabs: {template: __WEBPACK_IMPORTED_MODULE_14__bootstrap_tabs_html___default.a, builder: [ sfField, ngModelOptions, tabs, condition ]},
     textarea: {template: __WEBPACK_IMPORTED_MODULE_15__bootstrap_textarea_html___default.a, builder: defaults},
-    ogcbbox: {template: __WEBPACK_IMPORTED_MODULE_16__bootstrap_ogcbbox_html___default.a, builder: defaults}
+    // Geo types
+    bbox: {template: __WEBPACK_IMPORTED_MODULE_16__bootstrap_bbox_html___default.a, builder: defaults},
+    geometry: {template: __WEBPACK_IMPORTED_MODULE_17__bootstrap_geometry_html___default.a, builder: defaults},
+    feature: {template: __WEBPACK_IMPORTED_MODULE_18__bootstrap_feature_html___default.a, builder: defaults},
+    featurecollection: {template: __WEBPACK_IMPORTED_MODULE_19__bootstrap_featurecollection_html___default.a, builder: defaults},
+    
   }, []);
 };
 
 
 /***/ }),
-/* 19 */
+/* 22 */
 /***/ (function(module, exports) {
 
 /*!
  * angular-schema-form
  * @version 1.0.0-alpha.5
- * @date Thu, 18 Jan 2024 16:41:19 GMT
+ * @date Thu, 18 Jan 2024 17:32:05 GMT
  * @link https://github.com/json-schema-form/angular-schema-form
  * @license MIT
  * Copyright (c) 2014-2024 JSON Schema Form
@@ -484,7 +525,7 @@ module.exports = angular;
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
  * json-schema-form-core
  * @version 1.0.0-alpha.5
- * @date Thu, 18 Jan 2024 16:41:18 GMT
+ * @date Thu, 18 Jan 2024 17:32:04 GMT
  * @link https://github.com/json-schema-form/json-schema-form-core
  * @license MIT
  * Copyright (c) 2014-2024 JSON Schema Form
@@ -647,7 +688,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["integer"] = integer;
 /* harmony export (immutable) */ __webpack_exports__["checkbox"] = checkbox;
 /* harmony export (immutable) */ __webpack_exports__["select"] = select;
-/* harmony export (immutable) */ __webpack_exports__["ogcbbox"] = ogcbbox;
+/* harmony export (immutable) */ __webpack_exports__["geotypes"] = geotypes;
 /* harmony export (immutable) */ __webpack_exports__["checkboxes"] = checkboxes;
 /* harmony export (immutable) */ __webpack_exports__["fieldset"] = fieldset;
 /* harmony export (immutable) */ __webpack_exports__["array"] = array;
@@ -821,11 +862,11 @@ function select(name, schema, options) {
   }
 }
 
-function ogcbbox(name, schema, options) {
-  if (stripNullType(schema.type) === 'string' && schema.format === 'ogc-bbox') {
+function geotypes(name, schema, options) {
+  if (stripNullType(schema.type) === 'string' && ['ogc-bbox', 'geojson-geometry', 'geojson-feature', 'geojson-feature-collection'].indexOf(schema.format) !== -1) {
     var f = stdFormObj(name, schema, options);
     f.key = options.path;
-    f.type = 'ogcbbox';
+    f.type = schema.format.replace('ogc', '').replace('geojson', '').replace('-', '');
     options.lookup[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__sf_path__["stringify"])(options.path)] = f;
     console.log(f);
     return f;
@@ -912,7 +953,7 @@ function createDefaults() {
   // First sorted by schema type then a list.
   // Order has importance. First handler returning an form snippet will be used.
   return {
-    string: [ogcbbox, select, text],
+    string: [geotypes, select, text],
     object: [fieldset],
     number: [number],
     integer: [integer],
@@ -11615,11 +11656,11 @@ module.exports = __webpack_require__(3);
 /******/ ]);
 
 /***/ }),
-/* 20 */,
-/* 21 */
+/* 23 */,
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(19);
+__webpack_require__(22);
 module.exports = __webpack_require__(0);
 
 
