@@ -15,6 +15,10 @@ import submitTemplate from './bootstrap/submit.html';
 import tabarrayTemplate from './bootstrap/tabarray.html';
 import tabsTemplate from './bootstrap/tabs.html';
 import textareaTemplate from './bootstrap/textarea.html';
+import bboxTemplate from './bootstrap/bbox.html';
+import geometryTemplate from './bootstrap/geometry.html';
+import featureTemplate from './bootstrap/feature.html';
+import featurecollectionTemplate from './bootstrap/featurecollection.html';
 
 angular
   .module('schemaForm')
@@ -109,5 +113,11 @@ function bootstrapDecoratorConfig(
     tabarray: {template: tabarrayTemplate, builder: [ sfField, ngModelOptions, ngModel, array, condition ]},
     tabs: {template: tabsTemplate, builder: [ sfField, ngModelOptions, tabs, condition ]},
     textarea: {template: textareaTemplate, builder: defaults},
+    // Geo types
+    bbox: {template: bboxTemplate, builder: defaults},
+    geometry: {template: geometryTemplate, builder: defaults},
+    feature: {template: featureTemplate, builder: defaults},
+    featurecollection: {template: featurecollectionTemplate, builder: defaults},
+    
   }, []);
 };

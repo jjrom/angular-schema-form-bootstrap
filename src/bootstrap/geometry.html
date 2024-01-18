@@ -1,0 +1,19 @@
+<div class="form-group {{::form.htmlClass + ' schema-form-' + form.type + ' ' + idClass}}" ng-class="{
+       'has-error': form.disableErrorState !== true && hasError(),
+       'has-success': form.disableSuccessState !== true && hasSuccess(),
+       'has-feedback': form.feedback !== false,
+       'required': form.required === true
+     }">
+  <label class="control-label {{::form.labelHtmlClass}}" ng-class="{'sr-only': !showTitle()}"
+    for="{{::fieldId(true, false)}}">{{form.title}}
+  </label>
+  <input ng-show="::form.key" type="{{::form.type}}" step="any" sf-changed="form" placeholder="{{::form.placeholder}}"
+    class="form-control {{::form.fieldHtmlClass}}" id="{{::fieldId(true, false)}}" sf-field-model
+    ng-disabled="form.readonly" schema-validate="form" name="{{::fieldId(true, false)}}"
+    aria-describedby="{{::fieldId(true, true) + '-status'}}">
+
+  <button class="button {{ form.style || '' }}" type="button" ng-click="buttonClick($event, form)">
+    {{ 'ok' | translate }}
+  </button>
+
+</div>
